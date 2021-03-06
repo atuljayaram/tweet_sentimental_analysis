@@ -3,14 +3,15 @@ import tweepy # Library for connecting with Twitter API
 from tweepy import OAuthHandler # Module for authentication process
 from textblob import TextBlob # Popular library for NLP (Sentimental analysis specifically in our case)
 import mysql.connector # Python-MySQL interface
+from decouple import config # For environment variables
 
 # Authentication
 
 ## Obtained from Twitter
-consumer_key = 'XXXXXXXXXXXXXXXXXXXXXX'
-consumer_secret = 'XXXXXXXXXXXXXXXXXXXXXXXX'
-access_token = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
-access_token_secret = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXX'
+consumer_key = config('CONSUMER_KEY')
+consumer_secret = config('CONSUMER_SECRET')
+access_token = config('ACCESS_TOKEN')
+access_token_secret = config('ACCESS_TOKEN_SECRET')
 
 ## Perform Auth process
 
